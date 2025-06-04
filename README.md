@@ -50,8 +50,18 @@ cd LocalServicePro
 
 npm install
 
+
+
 3.**Start the Expo server**
 
 npx expo start
+
+4.**Run on your device**
+
+Use the Expo Go app to scan the QR code or
+Run in Android/iOS emulator:
+npx expo start --android
+npx expo start --ios
+
 
 
