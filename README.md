@@ -1,86 +1,57 @@
-🔧 Features Overview
-✅ Service Cards UI with name, availability, rating, price, and contact.
+# LocalServicePro
 
-✅ Infinite Scrolling for seamless loading of providers.
+A cross-platform mobile app built with **React Native**, **Expo Router**, and **TypeScript** that allows users to browse, search, and contact local service providers such as plumbers, electricians, and mechanics.
 
-✅ Search Bar with real-time filtering by name, service, or area.
+---
 
-✅ Profile Page (placeholder) with upcoming features like booking history.
+## Technologies Used
 
-✅ Service Detail Page with provider bio, pricing, experience, and call button.
+- **React Native** (via Expo)
+- **Expo Router** for file-based navigation
+- **TypeScript** for strong typing and maintainability
+- **React Navigation** (Bottom Tabs & Stack)
+- **React Native Gesture Handler & Reanimated**
+- **Expo Modules**: StatusBar, Safe Area Context, Constants, Linking
 
-✅ Random Suggestions for other providers at the bottom of detail view.
+---
 
-✅ Usability Heuristics like loading spinners, empty states, and feedback messages.
+##  Design Rationale
 
-✅ Responsive Layout with reusable UI components (ServiceCard, LoadingSpinner, etc.)
+- **Modular Architecture**: Screens, components, types, and utilities are neatly separated under `src/` to ensure reusability and scalability.
+- **Expo Router**: Used to simplify navigation structure via folder-based routing (Next.js style).
+- **Custom Theming**: A centralized `theme.ts` defines colors, spacing, and font sizes for consistent design.
+- **Mock Data**: Providers are dynamically rendered using mock data with infinite scroll, enabling offline development and testing.
+- **Extensibility**: Structure is prepared for future features like authentication, bookings, and provider reviews.
 
-🗂️ Folder Structure
-pgsql
-Copy
-Edit
-my-reli-app/
-├── app/                   ← Expo Router pages
-│   ├── _layout.tsx        ← Root layout with stack navigation
-│   ├── (tabs)/            ← Tab routes: Home & Profile
-│   │   ├── _layout.tsx
-│   │   ├── index.tsx
-│   │   └── profile.tsx
-│   └── service/
-│       └── [id].tsx       ← Service detail screen
-├── src/
-│   ├── components/        ← UI and feature components
-│   ├── screens/           ← Full screen implementations
-│   ├── data/              ← Mock service provider data
-│   ├── types/             ← TypeScript interfaces
-│   ├── utils/             ← Helper functions (formatting, filters, debounce, etc.)
-│   └── constants/         ← Theme values for colors, spacing, typography
-├── assets/                ← Images, icons, etc.
-├── App.tsx                ← Expo Router entry point
-├── app.json               ← Expo app config
-├── metro.config.js        ← Metro bundler config
-├── tsconfig.json          ← TypeScript settings
-└── package.json
-📦 Technologies Used
-Expo SDK 53
+---
 
-React Native
+##  Usability Heuristics Focused
 
-TypeScript
+| Heuristic                                | How it's Applied                                                |
+|------------------------------------------|-----------------------------------------------------------------|
+|  **Visibility of System Status**         | Loading spinners, availability badges, refresh indicators       |
+|  **Match Between System & Real World**   | Familiar terms: "electrician", "call", "area", "available"      |
+|  **User Control & Freedom**              | Back navigation, cancel buttons, pull-to-refresh                |
+|  **Consistency & Standards**             | Standard icons, tab bar UI, predictable button layouts          |
+|  **Recognition Over Recall**             | Search, iconography, tab names, and profile prompts             | 
+|  **Minimalist Design**                   | Clean layout with focused cards, typography, and spacing        |
+|  **Error Prevention & Handling**         | Graceful empty states, error messages, and confirmation dialogs |
 
-Expo Router v5
+---
 
-React Navigation (Tabs + Stack)
+## 🛠How to Run Locally
 
-Expo Modules: react-native-gesture-handler, expo-status-bar, react-native-safe-area-context
+1. **Clone the repo**
 
-💡 UX Best Practices Followed
-Clean UI with minimal visual clutter
+git clone https://github.com/ruchirabh/LocalServicePro.git
+cd LocalServicePro
 
-Status feedback (loading spinners, availability badges)
+2.**Install dependencies**
 
-Meaningful navigation (stack for service detail, tabs for Home/Profile)
+npm install
 
-Error handling with fallback UI
+3.**Start the Expo server**
 
-Search optimization with debounce and live filtering
+npx expo start
 
-🚀 How to Run
-bash
-Copy
-Edit
-npm install         # or yarn
-npx expo start      # starts development server
-🧪 Demo Use Case
-A user opens the app, searches for "electrician", taps a provider card, views their pricing and availability, and calls directly from the detail screen.
 
-🌱 Future Enhancements
-🔐 Login/Sign-up functionality (auth)
-
-🗺️ Location-based filtering
-
-📝 Booking system with calendar
-
-🛠️ Admin panel for provider management
-
-💬 Chat feature with providers
